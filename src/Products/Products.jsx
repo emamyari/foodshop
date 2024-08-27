@@ -43,7 +43,7 @@ export const Products = (props) => {
         contentLabel="Example Modal"
       >
         <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
+        <div>{props.sabad.map(c=><h6>{c}</h6>)}</div>
       </Modal>
       <div className="container mt-2">
         <div className="row">

@@ -21,13 +21,13 @@ const App = () => {
   }
 
   function showSabad(){
-    alert(123)
+    alert(123456)
   }
 
   return (
     <div>
       <Header sabad={sabad} showSabad={showSabad} ></Header>
-      <Products add={add} del={del} />
+      <Products sabad={sabad} add={add} del={del} />
     </div>
   )
 }
