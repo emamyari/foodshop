@@ -30,7 +30,7 @@ export const Products = (props) => {
     })
       .then(function (response) { return response.json(); })
       .then(function (result) {
-        setState(result.data.menus[3].products)
+        setState(result.data.menus[1].products)
       });
   }
   return (

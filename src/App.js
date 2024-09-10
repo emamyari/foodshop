@@ -5,18 +5,30 @@ import { Header } from './Header/Header';
 import { Products } from './Products/Products';
 const App = () => {
   const [sabad, setSabad] = useState([])
+  
   function add(title) {
-    var newList = sabad
-    newList = [...sabad, title]
+    let product=sabad.filter(item=>item.name==title)[0]
+    if (product==null){
+    let newList=sabad
+    newList.push({name:title,count:1})
     setSabad(newList)
-
+   }else{ 
+    product.count++
+    let newList=sabad.filter(item=>item.name!=title)
+    newList.push(product)
+    setSabad(newList)
+   }
+   console.log(sabad)
   }
   function del(title) {
-    let index = sabad.indexOf(title)
-     if (index != -1) {
-      let b = [...sabad.slice(0, index), ...sabad.slice(index + 1)];
-      setSabad(b)
-    }
+   let product=sabad.filter(item=>item.name==title)[0]
+   if (product!=null){
+    product.count--
+    let newList=sabad.filter(item=>item.name!=title)
+    newList.push(product)
+    setSabad(newList)
+   }
+   console.log(sabad)
 
   }
 
