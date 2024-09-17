@@ -2,21 +2,10 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import './Product.css'
 
-import Modal from 'react-modal';
 
 
 export const Products = (props) => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
 
-  function afterOpenModal() {
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
   const [state, setState] = useState([])
   useEffect(() => {
     getFoods()
@@ -35,16 +24,7 @@ export const Products = (props) => {
   }
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        contentLabel="Example Modal"
-      >
-        <button onClick={closeModal}>close</button>
-        <div>{props.sabad.map(c=><h6>{c}</h6>)}</div>
-      </Modal>
+     
       <div className="container mt-2">
         <div className="row">
         {state.map(item=> <div class="col-md-3 mt-4">
